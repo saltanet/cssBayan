@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+::selection {
+  background: rgb(0, 123, 255, 0.3);
+}
+.accordion {
+  max-width: 600px;
+  padding: 0 20px;
+}
+.accordion .accordion-item {
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
+}
+.accordion .accordion-item label {
+  background: #007bff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+.accordion .accordion-item label:hover {
+  background: #006fe6;
+}
+.accordion-item input:checked ~ label {
+  border-radius: 3px 3px 0 0;
+  background: #006fe6;
+}
+.accordion label span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.accordion .child-tab label span {
+  font-size: 17px;
+}
+.accordion-item label .icon {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  color: #007bff;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.accordion label .icon {
+  height: 27px;
+  width: 27px;
+}
+.accordion-item label .icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.accordion-item input:checked ~ label .icon i:before {
+  content: "\f068";
+}
+.accordion .accordion-item .content {
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+.accordion-item input:checked ~ .content {
+  max-height: 100vh;
+}
+.tab-3 input:checked ~ .content {
+  padding: 15px 20px;
+}
+.accordion-item .content p {
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+img {
+  max-height: 300px;
+}
