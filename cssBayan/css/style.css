@@ -1,0 +1,46 @@
+body {
+  font-family: serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 5px;
+}
+.accordion {
+  max-width: 500px;
+  margin: 20px auto;
+}
+.accordion-item {
+  border: 1px solid red;
+  margin-bottom: 5px;
+}
+.accordion-image {
+  height: 300px;
+  margin: 10px;
+}
+.accordion-inside {
+  display: none;
+}
+.accordion-title {
+  display: block;
+  cursor: pointer;
+  margin: 10px;
+}
+.accordion-item:hover {
+  background-color: red;
+  transition: background 0.2 ease-out;
+}
+.accordion-input {
+  appearance: none;
+  position: absolute;
+}
+.accordion-input:checked + .accordion-inside {
+  display: block;
+}
