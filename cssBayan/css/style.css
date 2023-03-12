@@ -1,46 +1,103 @@
-body {
-  font-family: serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
-p {
-  margin: 0 0 5px;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+::selection {
+  background: rgb(0, 123, 255, 0.3);
 }
 .accordion {
-  max-width: 500px;
-  margin: 20px auto;
+  max-width: 600px;
+  padding: 0 20px;
 }
-.accordion-item {
-  border: 1px solid red;
-  margin-bottom: 5px;
+.accordion .accordion-item {
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
 }
-.accordion-image {
-  height: 300px;
-  margin: 10px;
+.accordion .accordion-item label {
+  background: #007bff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
+  transition: all 0.3s ease;
 }
-.accordion-inside {
+.accordion .accordion-item label:hover {
+  background: #006fe6;
+}
+.accordion-item input:checked ~ label {
+  border-radius: 3px 3px 0 0;
+  background: #006fe6;
+}
+.accordion label span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.accordion .child-tab label span {
+  font-size: 17px;
+}
+.accordion-item label .icon {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  color: #007bff;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  text-shadow: 0 -1px 1px #0056b3;
+}
+.accordion label .icon {
+  height: 27px;
+  width: 27px;
+}
+.accordion-item label .icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.accordion-item input:checked ~ label .icon i:before {
+  content: "\f068";
+}
+.accordion .accordion-item .content {
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+.accordion-item input:checked ~ .content {
+  max-height: 100vh;
+}
+.tab-3 input:checked ~ .content {
+  padding: 15px 20px;
+}
+.accordion-item .content p {
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
   display: none;
 }
-.accordion-title {
-  display: block;
-  cursor: pointer;
-  margin: 10px;
-}
-.accordion-item:hover {
-  background-color: red;
-  transition: background 0.2 ease-out;
-}
-.accordion-input {
-  appearance: none;
-  position: absolute;
-}
-.accordion-input:checked + .accordion-inside {
-  display: block;
+
+img {
+  max-height: 300px;
 }
